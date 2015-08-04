@@ -75,7 +75,7 @@ function ws_itemprop_description($atts, $content = null)
 	return '<span itemprop="description">'.do_shortcode($text).'</span>';
 }
 
-add_shortcode('ip_desc', 'ws_itemprop_description');
+add_shortcode('ip_description', 'ws_itemprop_description');
 
 
 // Produces schema.org markup for the 'address' itemprop
@@ -91,6 +91,20 @@ function ws_itemprop_address($atts, $content = null)
 }
 
 add_shortcode('ip_address', 'ws_itemprop_address');
+
+// Produces schema.org markup for the 'phone' itemprop
+function ws_itemprop_telephone($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="telephone">'.do_shortcode($text).'</span>';
+}
+
+add_shortcode('ip_telephone', 'ws_itemprop_telephone');
 
 
 
