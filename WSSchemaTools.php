@@ -4,10 +4,10 @@ Plugin Name: WebSpanner - SchemaTools
 Plugin URI: http://www.makeweb.com.au
 Description: Add schema.org microdata to your wordpress site using shortcodes.
 Author: Andrew Feeney
-Version: 0.2
+Version: 0.2.1
 Author URI: http://www.makeweb.com.au
 GitHub Plugin URI: https://github.com/WebSpanner/SchemaTools
-GitHub Branch:     master
+GitHub Branch:     dev
 */
 
 // Initiliase plugin
