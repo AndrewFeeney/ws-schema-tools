@@ -39,14 +39,34 @@ add_shortcode('itemprop', 'ws_itemprop');
 // Produces schema.org markup for the localBusiness itemscope property
 function ws_localBusiness($atts, $content = null)
 {
-	return '<div itemscope="itemscope" itemtype="http://schema.org/localBusiness">'.do_shortcode($content).'</div>';
+	return '<div itemscope="itemscope" itemtype="http://schema.org/LocalBusiness">'.do_shortcode($content).'</div>';
 }
-
 add_shortcode('localbusiness', 'ws_localBusiness');
+
+
+// Produces schema.org markup for the ProfessionalService itemscope property
+function ws_professionalService($atts, $content = null)
+{
+	return '<div itemscope="itemscope" itemtype="http://schema.org/ProfessionalService">'.do_shortcode($content).'</div>';
+}
+add_shortcode('professionalservice', 'ws_professionalService');
+
 
 
 /** Specific itemprop markup **/
 
+// Produces schema.org markup for the 'makesOffer' itemprop
+function ws_itemprop_makesoffer($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="makesOffer" itemscope itemtype="http://schema.org/Offer">'.do_shortcode($text).'</span>';
+}
+add_shortcode('ip_makesoffer', 'ws_itemprop_makesoffer');
 
 // Produces schema.org markup for the 'name' itemprop
 function ws_itemprop_name($atts, $content = null)
@@ -105,6 +125,8 @@ function ws_itemprop_telephone($atts, $content = null)
 }
 
 add_shortcode('ip_telephone', 'ws_itemprop_telephone');
+
+
 
 
 

@@ -42,7 +42,13 @@ Html equivalent:
 > '<span itemprop="name"> Name </span>
 
 
-##### [ip_desc]
+##### [ip_description]
 
 ##### [ip_address]
 
+##### [ip_telephone]
+
+Usage:
+> '[ip_telephone "+123 4567 8901"/]
+Html equivalent:
+> '<span itemprop="name"> +123 4567 8901 </span>
