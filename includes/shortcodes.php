@@ -33,7 +33,7 @@ add_shortcode('itemprop', 'ws_itemprop');
  */
 
 
-/** Local Business Types **/
+/** Organisation Types **/
 
 
 // Produces schema.org markup for the localBusiness itemscope property
@@ -52,8 +52,75 @@ function ws_professionalService($atts, $content = null)
 add_shortcode('professionalservice', 'ws_professionalService');
 
 
+/** ItemTypes **/
+
+// Produces schema.org markup for the 'product' itemtype
+function ws_itemtype_product($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemscope itemtype="http://schema.org/Product">'.do_shortcode($text).'</span>';
+}
+add_shortcode('it_product', 'ws_itemtype_product');
+
+// Produces schema.org markup for the 'offer' itemtype
+function ws_itemtype_offer($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemscope itemtype="http://schema.org/Offer">'.do_shortcode($text).'</span>';
+}
+add_shortcode('it_product', 'ws_itemtype_offer');
+
 
 /** Specific itemprop markup **/
+
+// Produces schema.org markup for the 'address' itemprop
+function ws_itemprop_address($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">'.do_shortcode($text).'</span>';
+}
+add_shortcode('ip_address', 'ws_itemprop_address');
+
+// Produces schema.org markup for the 'description' itemprop
+function ws_itemprop_description($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="description">'.do_shortcode($text).'</span>';
+}
+add_shortcode('ip_description', 'ws_itemprop_description');
+
+// Produces schema.org markup for the 'itemOffered' itemprop
+function ws_itemprop_itemoffered($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="itemOfferred" itemscope itemtype="http://schema.org/Product">'.do_shortcode($text).'</span>';
+}
+add_shortcode('ip_itemoffered', 'ws_itemprop_itemoffered');
 
 // Produces schema.org markup for the 'makesOffer' itemprop
 function ws_itemprop_makesoffer($atts, $content = null)
@@ -79,38 +146,7 @@ function ws_itemprop_name($atts, $content = null)
 	}
 	return '<span itemprop="name">'.do_shortcode($text).'</span>';
 }
-
 add_shortcode('ip_name', 'ws_itemprop_name');
-
-
-// Produces schema.org markup for the 'description' itemprop
-function ws_itemprop_description($atts, $content = null)
-{
-	if ($content != null){
-		$text = $content;
-	}
-	else{
-		$text = $atts[0];
-	}
-	return '<span itemprop="description">'.do_shortcode($text).'</span>';
-}
-
-add_shortcode('ip_description', 'ws_itemprop_description');
-
-
-// Produces schema.org markup for the 'address' itemprop
-function ws_itemprop_address($atts, $content = null)
-{
-	if ($content != null){
-		$text = $content;
-	}
-	else{
-		$text = $atts[0];
-	}
-	return '<span itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">'.do_shortcode($text).'</span>';
-}
-
-add_shortcode('ip_address', 'ws_itemprop_address');
 
 // Produces schema.org markup for the 'phone' itemprop
 function ws_itemprop_telephone($atts, $content = null)
@@ -123,7 +159,19 @@ function ws_itemprop_telephone($atts, $content = null)
 	}
 	return '<span itemprop="telephone">'.do_shortcode($text).'</span>';
 }
+add_shortcode('ip_telephone', 'ws_itemprop_telephone');
 
+// Produces schema.org markup for the 'price' itemprop
+function ws_itemprop_telephone($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="telephone">'.do_shortcode($text).'</span>';
+}
 add_shortcode('ip_telephone', 'ws_itemprop_telephone');
 
 
