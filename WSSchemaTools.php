@@ -7,7 +7,7 @@ Author: Andrew Feeney
 Version: 0.2.1
 Author URI: http://www.makeweb.com.au
 GitHub Plugin URI: https://github.com/WebSpanner/SchemaTools
-GitHub Branch:     dev
+GitHub Branch: master
 */
 
 // Initiliase plugin
