@@ -7,7 +7,7 @@
  */
  
 // Lists all available shortcodes shortcodes
-function list_shortcodes()
+function ws_list_shortcodes()
 {
 	global $shortcode_tags;
 	echo "<pre>"; print_r($shortcode_tags); echo "</pre>";

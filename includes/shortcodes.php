@@ -96,6 +96,32 @@ function ws_itemprop_address($atts, $content = null)
 }
 add_shortcode('ip_address', 'ws_itemprop_address');
 
+// Produces schema.org markup for the 'addressLocality' itemprop
+function ws_itemprop_addressLocality($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="addressLocality">'.do_shortcode($text).'</span>';
+}
+add_shortcode('ip_addressLocality', 'ws_itemprop_addressLocality');
+
+// Produces schema.org markup for the 'addressRegion' itemprop
+function ws_itemprop_addressRegion($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="addressRegion">'.do_shortcode($text).'</span>';
+}
+add_shortcode('ip_addressRegion', 'ws_itemprop_addressRegion');
+
 // Produces schema.org markup for the 'description' itemprop
 function ws_itemprop_description($atts, $content = null)
 {
@@ -148,6 +174,19 @@ function ws_itemprop_name($atts, $content = null)
 }
 add_shortcode('ip_name', 'ws_itemprop_name');
 
+// Produces schema.org markup for the 'postalCode' itemprop
+function ws_itemprop_postalCode($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="postalCode">'.do_shortcode($text).'</span>';
+}
+add_shortcode('ip_postalCode', 'ws_itemprop_postalCode');
+
 // Produces schema.org markup for the 'price' itemprop
 function ws_itemprop_price($atts, $content = null)
 {
@@ -174,6 +213,18 @@ function ws_itemprop_pricecurrency($atts, $content = null)
 }
 add_shortcode('ip_priceCurrency', 'ws_itemprop_pricecurrency');
 
+// Produces schema.org markup for the 'streetAddress' itemprop
+function ws_itemprop_streetAddress($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="streetAddress">'.do_shortcode($text).'</span>';
+}
+add_shortcode('ip_streetAddress', 'ws_itemprop_streetAddress');
 
 // Produces schema.org markup for the 'phone' itemprop
 function ws_itemprop_telephone($atts, $content = null)
