@@ -6,7 +6,7 @@ Description: Add schema.org microdata to your wordpress site using shortcodes.
 Author: Andrew Feeney
 Version: 0.2.2
 Author URI: http://www.makeweb.com.au
-GitHub Plugin URI: https://github.com/WebSpanner/SchemaTools
+GitHub Plugin URI: https://github.com/WebSpanner/ws-schema-tools
 GitHub Branch: master
 */
 
