@@ -54,19 +54,6 @@ add_shortcode('professionalservice', 'ws_professionalService');
 
 /** ItemTypes **/
 
-// Produces schema.org markup for the 'product' itemtype
-function ws_itemtype_product($atts, $content = null)
-{
-	if ($content != null){
-		$text = $content;
-	}
-	else{
-		$text = $atts[0];
-	}
-	return '<span itemscope itemtype="http://schema.org/Product">'.do_shortcode($text).'</span>';
-}
-add_shortcode('it_product', 'ws_itemtype_product');
-
 // Produces schema.org markup for the 'offer' itemtype
 function ws_itemtype_offer($atts, $content = null)
 {
@@ -79,6 +66,19 @@ function ws_itemtype_offer($atts, $content = null)
 	return '<span itemscope itemtype="http://schema.org/Offer">'.do_shortcode($text).'</span>';
 }
 add_shortcode('it_product', 'ws_itemtype_offer');
+
+// Produces schema.org markup for the 'product' itemtype
+function ws_itemtype_product($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemscope itemtype="http://schema.org/Product">'.do_shortcode($text).'</span>';
+}
+add_shortcode('it_product', 'ws_itemtype_product');
 
 
 /** Specific itemprop markup **/
@@ -148,6 +148,33 @@ function ws_itemprop_name($atts, $content = null)
 }
 add_shortcode('ip_name', 'ws_itemprop_name');
 
+// Produces schema.org markup for the 'price' itemprop
+function ws_itemprop_price($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="price">'.do_shortcode($text).'</span>';
+}
+add_shortcode('ip_price', 'ws_itemprop_price');
+
+// Produces schema.org markup for the 'priceCurrency' itemprop
+function ws_itemprop_pricecurrency($atts, $content = null)
+{
+	if ($content != null){
+		$text = $content;
+	}
+	else{
+		$text = $atts[0];
+	}
+	return '<span itemprop="priceCurrency" content='.$atts[0].'>'.do_shortcode($text).'</span>';
+}
+add_shortcode('ip_priceCurrency', 'ws_itemprop_pricecurrency');
+
+
 // Produces schema.org markup for the 'phone' itemprop
 function ws_itemprop_telephone($atts, $content = null)
 {
@@ -157,22 +184,10 @@ function ws_itemprop_telephone($atts, $content = null)
 	else{
 		$text = $atts[0];
 	}
-	return '<span itemprop="telephone">'.do_shortcode($text).'</span>';
+	return '<span itemprop="telephone" content='.$atts[0].'>'.do_shortcode($text).'</span>';
 }
 add_shortcode('ip_telephone', 'ws_itemprop_telephone');
 
-// Produces schema.org markup for the 'price' itemprop
-function ws_itemprop_telephone($atts, $content = null)
-{
-	if ($content != null){
-		$text = $content;
-	}
-	else{
-		$text = $atts[0];
-	}
-	return '<span itemprop="telephone">'.do_shortcode($text).'</span>';
-}
-add_shortcode('ip_telephone', 'ws_itemprop_telephone');
 
 
 
